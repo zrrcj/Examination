@@ -1,0 +1,135 @@
+.niuniu-pagination {
+  display: inline-block;
+  padding-left: 0;
+  margin: 20px 0;
+  border-radius: 4px;
+  font-weight:bold;
+}
+.niuniu-pagination > li {
+  display: inline;
+}
+.niuniu-pagination > li > a,
+.niuniu-pagination > li > span {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: #428bca;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+.niuniu-pagination > li:first-child > a,
+.niuniu-pagination > li:first-child > span {
+  margin-left: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.niuniu-pagination > li:last-child > a,
+.niuniu-pagination > li:last-child > span {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.niuniu-pagination > li > a:hover,
+.niuniu-pagination > li > span:hover,
+.niuniu-pagination > li > a:focus,
+.niuniu-pagination > li > span:focus {
+  color: #2a6496;
+  background-color: #eee;
+  border-color: #ddd;
+}
+.niuniu-pagination > .active > a,
+.niuniu-pagination > .active > span,
+.niuniu-pagination > .active > a:hover,
+.niuniu-pagination > .active > span:hover,
+.niuniu-pagination > .active > a:focus,
+.niuniu-pagination > .active > span:focus {
+  z-index: 2;
+  color: #fff;
+  cursor: default;
+  background-color: #428bca;
+  border-color: #428bca;
+}
+.niuniu-pagination > .disabled > span,
+.niuniu-pagination > .disabled > span:hover,
+.niuniu-pagination > .disabled > span:focus,
+.niuniu-pagination > .disabled > a,
+.niuniu-pagination > .disabled > a:hover,
+.niuniu-pagination > .disabled > a:focus {
+  color: #999;
+  cursor: not-allowed;
+  background-color: #fff;
+  border-color: #ddd;
+}
+.niuniu-pagination-lg > li > a,
+.niuniu-pagination-lg > li > span {
+  padding: 10px 16px;
+  font-size: 18px;
+}
+.niuniu-pagination-lg > li:first-child > a,
+.niuniu-pagination-lg > li:first-child > span {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.niuniu-pagination-lg > li:last-child > a,
+.niuniu-pagination-lg > li:last-child > span {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.niuniu-pagination-sm > li > a,
+.niuniu-pagination-sm > li > span {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+.niuniu-pagination-sm > li:first-child > a,
+.niuniu-pagination-sm > li:first-child > span {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.niuniu-pagination-sm > li:last-child > a,
+.niuniu-pagination-sm > li:last-child > span {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.pager {
+  padding-left: 0;
+  margin: 20px 0;
+  text-align: center;
+  list-style: none;
+}
+.pager li {
+  display: inline;
+}
+.pager li > a,
+.pager li > span {
+  display: inline-block;
+  padding: 5px 14px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+}
+.pager li > a:hover,
+.pager li > a:focus {
+  text-decoration: none;
+  background-color: #eee;
+}
+.pager .next > a,
+.pager .next > span {
+  float: right;
+}
+.pager .previous > a,
+.pager .previous > span {
+  float: left;
+}
+.pager .disabled > a,
+.pager .disabled > a:hover,
+.pager .disabled > a:focus,
+.pager .disabled > span {
+  color: #999;
+  cursor: not-allowed;
+  background-color: #fff;
+}
+
+a {outline: none;}
+a:active {star:expression(this.onFocus=this.blur());}

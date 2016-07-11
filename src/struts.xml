@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 动态方法调用默认的是false，改为true -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<!-- 开发者应用程序。就是调试，等用完改为false -->
+	<constant name="struts.devMode" value="true" />
+	<!-- URL访问的actions的拓展名 -->
+	<constant name="struts.action.extension" value="action" />
+	<!-- value值是 struts要扫描的包，如果后面还有单词则是约束的命名空间，会影响到约束约束寻找视图文件夹路径 -->
+	<!-- <constant name="struts.convention.package.locators" value="action" 
+		/> -->
+	<!-- 以value开头的包全部加入struts扫描行列 ，如果与上面的locators冲突则此配置不起作用 -->
+	<!-- <constant name="struts.convention.package.locators.basePackage" value="com.puruanit" 
+		/> -->
+	<!-- struts要排除的包名，多个用逗号分隔 -->
+	<!-- <constant name="struts.convention.exclude.packages" value="org.apache.struts.*,org.springframework.web"/> -->
+	<!-- 用户视图即xxx.jsp的存放路径 -->
+	<constant name="struts.convention.result.path" value="/WEB-INF/jsp/" />
+
+	<!-- struts与spring集成 -->
+	<constant name="struts.objectFactory" value="spring" />
+	
+	<package name="default" namespace="/" extends="json-default">
+	<!-- 拦截器 -->
+		<interceptors>
+			<interceptor name="authorization" class="com.ks.common.TimeOutInterceptor" />
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="authorization">
+					<param name="ignoreActions">image,login,Home,connector,error,lockin</param>
+				</interceptor-ref>
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myStack" />
+		<!-- 拦截器 -->
+		<!-- 网站入口，默认action，只支持根空间 -->
+		<default-action-ref name="login" /> <!-- 这是入口，得在这 -->
+		<global-results>
+			<result name="error">/WEB-INF/jsp/404.jsp</result>
+			<result name="login" type="redirectAction">
+			<param name="namespace">/</param>
+	    <param name="actionName">login</param>
+	    </result>
+		</global-results>
+		<!-- <global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception"
+				result="error" />
+		</global-exception-mappings> -->
+	</package>
+
+
+
+	<!-- Add packages here -->
+
+</struts>

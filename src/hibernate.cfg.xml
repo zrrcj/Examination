@@ -1,0 +1,37 @@
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+	    <!-- 数据库 连接配置-->
+    <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="connection.url">jdbc:mysql://localhost:3306/KS09_DB</property>
+    <property name="connection.username">root</property>
+    <property name="connection.password">root</property>
+
+    <!-- JDBC 数据库连接池个数 -->
+    <property name="connection.pool_size">1</property>
+    <!--  打开session会话自动管理功能-->
+    <property name="current_session_context_class">thread</property>
+    <!-- 关闭二级缓存 -->
+    <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+
+    <!-- 在程序启动的时候检测对象关系映射是否一致，不一致则更新 -->
+    <!-- <property name="hbm2ddl.auto">update</property> -->
+    <!-- 在控制台显示被执行的sql语句，生产环境设置为false -->
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+	<!-- 向Hebernate框架注册对象关系映射 --> 
+		<mapping class="com.ks.pojo.Hn09Student"/>
+		<mapping class="com.ks.pojo.Hn09Class"/>
+		<mapping class="com.ks.pojo.Hn09Subject"/>
+		<mapping class="com.ks.pojo.Hn09Answer"/>
+		<mapping class="com.ks.pojo.Hn09Plain"/>
+		<mapping class="com.ks.pojo.Hn09PlainDtl"/>
+		<mapping class="com.ks.pojo.Hn09Qstpaper"/>
+		<mapping class="com.ks.pojo.Hn09QstpaperDtl"/>
+		<mapping class="com.ks.pojo.Hn09Question"/>
+		<mapping class="com.ks.pojo.Hn09Selectitem"/>
+		<mapping class="com.ks.pojo.Hn09Qsttype"/>
+		<!-- 缓存 --><!-- <class-cache class="org.hibernate.test.legacy.Simple" region="Simple" usage="read-write"/> -->
+	</session-factory>
+</hibernate-configuration>
